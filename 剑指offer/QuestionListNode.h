@@ -14,8 +14,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QuestionListNode : NSObject
+@interface ListNode:NSObject
+@property(nonatomic ,assign)NSInteger  data;
+@property(nonatomic ,strong)ListNode  *next;
+@end
 
+
+
+@interface QuestionListNode : NSObject
+/**
+ *输入一个链表，按链表从尾到头的顺序返回一个ArrayList
+ **/
++(NSArray *)printListFromTailToHead:(ListNode *)node;
 @end
 
 NS_ASSUME_NONNULL_END

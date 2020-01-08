@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 *解题思路：
 **/
 
-+(NSString *)replaceSpaceString:(NSString *)targetString;
++(NSString *)zz_replaceSpaceString:(NSString *)targetString;
 
 @end
 

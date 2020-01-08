@@ -31,7 +31,7 @@ void replaceSpace(char *target,int length){
     }
 }
 
-+(NSString *)replaceSpaceString:(NSString *)targetString{
++(NSString *)zz_replaceSpaceString:(NSString *)targetString{
     return [targetString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 

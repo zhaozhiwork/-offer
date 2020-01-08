@@ -45,4 +45,21 @@ bool  FindTarget(int array[][4],int length,int target){
      return NO;
 }
 
+
++(NSInteger)zz_FindMinNumberInRotateArray:(NSArray<NSNumber *>*)array{
+    if (array.count == 0) {return 0;}
+    NSInteger low=0,mid,high=array.count-1;
+    while (low<high) {
+        mid = (high+low)/2;
+        if ([array[mid] integerValue]<[array[high] integerValue]) {
+            high = mid;
+        }else if ([array[mid] integerValue]>[array[high] integerValue]){
+            low = mid+1;
+        }else{
+            high --;
+        }
+    }
+    return [array[low] integerValue];
+}
+
 @end

@@ -12,6 +12,8 @@
 		5839881123C481AB002CDAA9 /* QuestionString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881023C481AB002CDAA9 /* QuestionString.m */; };
 		5839881423C484A2002CDAA9 /* QuestionListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881323C484A2002CDAA9 /* QuestionListNode.m */; };
 		5839881723C4942C002CDAA9 /* QuestionTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881623C4942C002CDAA9 /* QuestionTreeNode.m */; };
+		5839881A23C5C756002CDAA9 /* QuestionFibonacci.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881923C5C756002CDAA9 /* QuestionFibonacci.m */; };
+		5839881D23C5DD4F002CDAA9 /* QuestionDymiac.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,10 @@
 		5839881323C484A2002CDAA9 /* QuestionListNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionListNode.m; sourceTree = "<group>"; };
 		5839881523C4942C002CDAA9 /* QuestionTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionTreeNode.h; sourceTree = "<group>"; };
 		5839881623C4942C002CDAA9 /* QuestionTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionTreeNode.m; sourceTree = "<group>"; };
+		5839881823C5C756002CDAA9 /* QuestionFibonacci.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionFibonacci.h; sourceTree = "<group>"; };
+		5839881923C5C756002CDAA9 /* QuestionFibonacci.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionFibonacci.m; sourceTree = "<group>"; };
+		5839881B23C5DD4F002CDAA9 /* QuestionDymiac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionDymiac.h; sourceTree = "<group>"; };
+		5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionDymiac.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,10 @@
 				5839881323C484A2002CDAA9 /* QuestionListNode.m */,
 				5839881523C4942C002CDAA9 /* QuestionTreeNode.h */,
 				5839881623C4942C002CDAA9 /* QuestionTreeNode.m */,
+				5839881823C5C756002CDAA9 /* QuestionFibonacci.h */,
+				5839881923C5C756002CDAA9 /* QuestionFibonacci.m */,
+				5839881B23C5DD4F002CDAA9 /* QuestionDymiac.h */,
+				5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */,
 			);
 			path = "剑指offer";
 			sourceTree = "<group>";
@@ -139,10 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5839881D23C5DD4F002CDAA9 /* QuestionDymiac.m in Sources */,
 				5839880B23C47D41002CDAA9 /* main.m in Sources */,
 				5839881723C4942C002CDAA9 /* QuestionTreeNode.m in Sources */,
 				5839881123C481AB002CDAA9 /* QuestionString.m in Sources */,
 				5839880E23C47F97002CDAA9 /* QuestionArray.h.m in Sources */,
+				5839881A23C5C756002CDAA9 /* QuestionFibonacci.m in Sources */,
 				5839881423C484A2002CDAA9 /* QuestionListNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

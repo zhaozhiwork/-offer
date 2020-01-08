@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *输入一个链表，按链表从尾到头的顺序返回一个ArrayList
  **/
-+(NSArray *)printListFromTailToHead:(ListNode *)node;
++(NSArray *)zz_printListFromTailToHead:(ListNode *)node;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,7 +14,7 @@
 
 @implementation QuestionListNode
 
-+(NSArray *)printListFromTailToHead:(ListNode *)node{
++(NSArray *)zz_printListFromTailToHead:(ListNode *)node{
     NSMutableArray *stackArray = [NSMutableArray array];
     while (node) {
         [stackArray addObject:@(node.data)];

@@ -28,4 +28,44 @@
     return outArray;
 }
 
++(ListNode *)zz_FindKthToTail:(ListNode *)node andIndex:(NSInteger)k{
+    if (k<=0) {return nil;}
+    ListNode *targetNode = node;
+    NSInteger tmp = 0;
+    while (node.next) {
+        node = node.next;
+       
+        if (tmp<k) {
+             tmp++;
+        }
+        
+        if (tmp==k) {
+            targetNode = targetNode.next;
+        }
+    }
+    return tmp<k?nil:targetNode;
+}
+
++(ListNode *)zz_reverseList:(ListNode *)node{
+    if (!node || !node.next) {
+        return node;
+    }
+    
+    ListNode *pre = nil;
+    ListNode *next = nil;
+    
+    while (node) {
+        
+        next = node.next;
+        
+        node.next = pre;
+        
+        pre = node;
+        
+        node = next;
+    }
+    
+    return pre;
+}
+
 @end

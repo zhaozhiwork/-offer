@@ -16,11 +16,37 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-
-
-
+ 
+        
     }
     return 0;
+}
+
+void testReverseList(){
+     ListNode *rootNode = [[ListNode alloc]init];
+        rootNode.data = 0;
+        ListNode *nextNode = rootNode;
+        for (NSInteger i = 1; i<10; i++) {
+            ListNode *tmpNode = [[ListNode alloc]init];
+            tmpNode.data = i;
+            nextNode.next = tmpNode;
+            nextNode = tmpNode;
+        }
+     ListNode *head =  [QuestionListNode zz_reverseList:rootNode];
+}
+
+void testKthToTail(){
+       ListNode *rootNode = [[ListNode alloc]init];
+       rootNode.data = 0;
+       ListNode *nextNode = rootNode;
+       for (NSInteger i = 1; i<10; i++) {
+           ListNode *tmpNode = [[ListNode alloc]init];
+           tmpNode.data = i;
+           nextNode.next = tmpNode;
+           nextNode = tmpNode;
+       }
+       
+    ListNode *resultNode =  [QuestionListNode zz_FindKthToTail:rootNode andIndex:9];
 }
 
 void testReOrderArray(){

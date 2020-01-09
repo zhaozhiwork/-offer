@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5839880B23C47D41002CDAA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839880123C440A0002CDAA9 /* main.m */; };
-		5839880E23C47F97002CDAA9 /* QuestionArray.h.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839880D23C47F97002CDAA9 /* QuestionArray.h.m */; };
+		5839880E23C47F97002CDAA9 /* QuestionArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839880D23C47F97002CDAA9 /* QuestionArray.m */; };
 		5839881123C481AB002CDAA9 /* QuestionString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881023C481AB002CDAA9 /* QuestionString.m */; };
 		5839881423C484A2002CDAA9 /* QuestionListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881323C484A2002CDAA9 /* QuestionListNode.m */; };
 		5839881723C4942C002CDAA9 /* QuestionTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881623C4942C002CDAA9 /* QuestionTreeNode.m */; };
@@ -32,7 +32,7 @@
 		583987FE23C440A0002CDAA9 /* 剑指offer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "剑指offer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5839880123C440A0002CDAA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5839880C23C47F97002CDAA9 /* QuestionArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionArray.h; sourceTree = "<group>"; };
-		5839880D23C47F97002CDAA9 /* QuestionArray.h.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionArray.h.m; sourceTree = "<group>"; };
+		5839880D23C47F97002CDAA9 /* QuestionArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionArray.m; sourceTree = "<group>"; };
 		5839880F23C481AB002CDAA9 /* QuestionString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionString.h; sourceTree = "<group>"; };
 		5839881023C481AB002CDAA9 /* QuestionString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionString.m; sourceTree = "<group>"; };
 		5839881223C484A2002CDAA9 /* QuestionListNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionListNode.h; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			children = (
 				5839880123C440A0002CDAA9 /* main.m */,
 				5839880C23C47F97002CDAA9 /* QuestionArray.h */,
-				5839880D23C47F97002CDAA9 /* QuestionArray.h.m */,
+				5839880D23C47F97002CDAA9 /* QuestionArray.m */,
 				5839880F23C481AB002CDAA9 /* QuestionString.h */,
 				5839881023C481AB002CDAA9 /* QuestionString.m */,
 				5839881223C484A2002CDAA9 /* QuestionListNode.h */,
@@ -153,7 +153,7 @@
 				5839880B23C47D41002CDAA9 /* main.m in Sources */,
 				5839881723C4942C002CDAA9 /* QuestionTreeNode.m in Sources */,
 				5839881123C481AB002CDAA9 /* QuestionString.m in Sources */,
-				5839880E23C47F97002CDAA9 /* QuestionArray.h.m in Sources */,
+				5839880E23C47F97002CDAA9 /* QuestionArray.m in Sources */,
 				5839881A23C5C756002CDAA9 /* QuestionFibonacci.m in Sources */,
 				5839881423C484A2002CDAA9 /* QuestionListNode.m in Sources */,
 			);

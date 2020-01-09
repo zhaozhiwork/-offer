@@ -17,9 +17,20 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        
+
+
     }
     return 0;
+}
+
+void testReOrderArray(){
+    NSArray *tmp1 = @[@(5),@(4),@(6),@(8),@(9),@(2),@(19),@(20),@(21)];
+    NSMutableArray *tmp = [NSMutableArray arrayWithArray:tmp1];
+    [QuestionDymiac zz_reOrderArray:tmp];
+}
+
+void testPower(){
+     double result = [QuestionDymiac zz_Power:10.0 andWith:-2];
 }
 
 void testNumberOF1(){

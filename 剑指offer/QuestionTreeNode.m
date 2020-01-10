@@ -72,4 +72,15 @@
     /**根结点相同时候 开始比对左右子树**/
     return [self zz_recursiveTree:root1.left andWith:root1.left] && [self zz_recursiveTree:root1.right andWith:root2.right];
 }
+
+
++(void)zz_MirrorTree:(TreeNode *)tree{
+    
+    if (tree) return;
+    TreeNode *tmpNode = tree.left;
+    tree.left = tree.right;
+    tree.right = tmpNode;
+    [self zz_MirrorTree:tree.left];
+    [self zz_MirrorTree:tree.right];
+}
 @end

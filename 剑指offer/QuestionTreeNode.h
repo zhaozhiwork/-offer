@@ -35,6 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(BOOL)zz_HasSubTree:(TreeNode *)root1 andWith:(TreeNode *)root2;
 
+
+/**
+ *question18:镜像二叉树  操作给定的二叉树，将其变换为源二叉树的镜像；
+ **/
++(void )zz_MirrorTree:(TreeNode *)tree;
 @end
 
 NS_ASSUME_NONNULL_END

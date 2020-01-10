@@ -35,4 +35,41 @@
     return rootNode;
 }
 
++(BOOL)zz_HasSubTree:(TreeNode *)root1 andWith:(TreeNode *)root2{
+    
+    if (!root1)return NO;
+    if (!root2)return NO;
+    
+    BOOL result = NO ;
+    
+    /**如果当前的根节点相同  递归比对更深层次的左右子树结点的值**/
+    if (root1.data== root2.data) {
+        result = [self zz_recursiveTree:root1 andWith:root2];
+    }
+    
+    /**如果当前的根节点不相同  递归比对root1更深层次的左子树结点的值与root2来比对**/
+    if (!result) {
+        result = [self zz_HasSubTree:root1.left andWith:root2];
+    }
+    
+     /**如果当左节点的值与root2根节点值不相同  递归比对root1更深层次的右子树结点的值与root2来比对**/
+    if (!result) {
+       result = [self zz_HasSubTree:root1.right andWith:root2];
+    }
+    
+    return result;
+    
+//    return ([self zz_recursiveTree:root1 andWith:root2] || [self zz_HasSubTree:root1.left andWith:root2]  || [self zz_HasSubTree:root1.right andWith:root2]);
+}
+
++(BOOL)zz_recursiveTree:(TreeNode *)root1 andWith:(TreeNode *)root2{
+  
+    if (!root2)return YES;
+    if (!root1)return NO;
+    if (root1.data !=root2.data) {
+        return NO;
+    }
+    /**根结点相同时候 开始比对左右子树**/
+    return [self zz_recursiveTree:root1.left andWith:root1.left] && [self zz_recursiveTree:root1.right andWith:root2.right];
+}
 @end

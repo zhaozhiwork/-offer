@@ -53,7 +53,6 @@
     
     ListNode *pre = nil;
     ListNode *next = nil;
-    
     while (node) {
         
         next = node.next;
@@ -66,6 +65,38 @@
     }
     
     return pre;
+}
+
++(ListNode *)zz_MergeTwoList:(ListNode *)list1 andList:(ListNode *)list2{
+    if (!list1)
+    return list2;
+    if (!list2)
+    return list1;
+    ListNode *head = [[ListNode alloc]init];
+    ListNode *mergeList = head;
+    while (list1&&list2) {
+        if (list1.data<list2.data) {
+            head.next = list1;
+             list1 = list1.next;
+        }else{
+            head.next = list2;
+            list2 = list2.next;
+        }
+        head = head.next;
+    }
+    
+    while (list1) {
+        head.next = list1;
+        list1 = list1.next;
+        head = head.next;
+    }
+    while (list2) {
+        head.next = list2;
+        list2 = list1.next;
+        head = head.next;
+    }
+        
+    return mergeList.next;
 }
 
 @end

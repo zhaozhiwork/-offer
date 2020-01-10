@@ -16,7 +16,29 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
- 
+    ListNode *rootNode = [[ListNode alloc]init];
+    rootNode.data = 1;
+    ListNode *nextNode = rootNode;
+    for (NSInteger i = 2; i<5; i++) {
+        ListNode *tmpNode = [[ListNode alloc]init];
+        tmpNode.data = i;
+        nextNode.next = tmpNode;
+        nextNode = tmpNode;
+    }
+        
+    
+        ListNode *rootNode1= [[ListNode alloc]init];
+        rootNode1.data = 3;
+        ListNode *nextNode1 = rootNode1;
+        for (NSInteger j = 4; j<10; j++) {
+            ListNode *tmpNode = [[ListNode alloc]init];
+            tmpNode.data = j;
+            nextNode1.next = tmpNode;
+            nextNode1 = tmpNode;
+        }
+        
+     ListNode *head   =   [QuestionListNode zz_MergeTwoList:rootNode andList:rootNode1];
+        
         
     }
     return 0;

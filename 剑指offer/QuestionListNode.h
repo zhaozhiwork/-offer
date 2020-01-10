@@ -40,6 +40,14 @@ NS_ASSUME_NONNULL_BEGIN
  *解题思路：我们需要逐个调整每个结点的next指向，
  **/
 +(ListNode *)zz_reverseList:(ListNode *)node;
+
+
+/**
+ *题目：输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则
+ *
+ *解题思路：其中的单调不减规则  即 f(x1)<=f(x2) 在作用域中满足（x1<x2）
+ **/
++(ListNode *)zz_MergeTwoList:(ListNode *)list1 andList:(ListNode *)list2;
 @end
 
 NS_ASSUME_NONNULL_END

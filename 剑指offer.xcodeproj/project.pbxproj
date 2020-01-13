@@ -14,6 +14,7 @@
 		5839881723C4942C002CDAA9 /* QuestionTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881623C4942C002CDAA9 /* QuestionTreeNode.m */; };
 		5839881A23C5C756002CDAA9 /* QuestionFibonacci.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881923C5C756002CDAA9 /* QuestionFibonacci.m */; };
 		5839881D23C5DD4F002CDAA9 /* QuestionDymiac.m in Sources */ = {isa = PBXBuildFile; fileRef = 5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */; };
+		7ED26A4923CB363700CFD312 /* testObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED26A4823CB363700CFD312 /* testObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		5839881923C5C756002CDAA9 /* QuestionFibonacci.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionFibonacci.m; sourceTree = "<group>"; };
 		5839881B23C5DD4F002CDAA9 /* QuestionDymiac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionDymiac.h; sourceTree = "<group>"; };
 		5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionDymiac.m; sourceTree = "<group>"; };
+		7ED26A4723CB363700CFD312 /* testObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testObject.h; sourceTree = "<group>"; };
+		7ED26A4823CB363700CFD312 /* testObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				5839881923C5C756002CDAA9 /* QuestionFibonacci.m */,
 				5839881B23C5DD4F002CDAA9 /* QuestionDymiac.h */,
 				5839881C23C5DD4F002CDAA9 /* QuestionDymiac.m */,
+				7ED26A4723CB363700CFD312 /* testObject.h */,
+				7ED26A4823CB363700CFD312 /* testObject.m */,
 			);
 			path = "剑指offer";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				5839881123C481AB002CDAA9 /* QuestionString.m in Sources */,
 				5839880E23C47F97002CDAA9 /* QuestionArray.m in Sources */,
 				5839881A23C5C756002CDAA9 /* QuestionFibonacci.m in Sources */,
+				7ED26A4923CB363700CFD312 /* testObject.m in Sources */,
 				5839881423C484A2002CDAA9 /* QuestionListNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,4 +62,63 @@ bool  FindTarget(int array[][4],int length,int target){
     return [array[low] integerValue];
 }
 
+
++(NSArray *)zz_printMatrix:(NSArray <NSArray *>*)matrix{
+    NSMutableArray *printArray = [NSMutableArray array];
+    if (!matrix || matrix.count == 0) {
+        return printArray;
+    }
+    
+    NSInteger row = 0;
+    NSInteger totalRow = matrix.count-1;
+    NSInteger col = 0;
+    NSInteger totalCol = matrix.firstObject.count-1;
+ 
+    
+    while (1) {
+        
+        /**最上面一行**/
+        for (NSInteger i = col; i<=totalCol; i++) {
+            [printArray addObject:matrix[row][i]];
+        }
+        row++;
+        if (row>totalRow) {
+            break;
+        }
+        /**最后边一列**/
+        for (NSInteger i = row; i<=totalRow; i++) {
+            [printArray addObject:matrix[i][totalCol]];
+        }
+        totalCol --;
+        
+        if (col>totalCol) {
+            break;
+        }
+        /**最下面一行**/
+        for (NSInteger i=totalCol; i>=col; i--) {
+            [printArray addObject:matrix[totalRow][i]];
+        }
+        
+        totalRow--;
+        
+        if (row>totalRow) {
+            break;
+        }
+        
+          /**最左边一列**/
+        for (NSInteger i=totalRow; i>=row; i--) {
+            [printArray addObject:matrix[i][col]];
+        }
+        
+        col++;
+        
+        if (col>totalCol) {
+            break;
+        }
+        
+    }
+
+    return printArray;
+}
+
 @end

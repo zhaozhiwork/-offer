@@ -16,6 +16,16 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        NSArray *tmp =@[@[@1,@2,@3,@4],@[@5,@6,@7,@8],@[@9,@10,@11,@12],@[@13,@14,@15,@16]];
+
+      NSArray *testResult = [QuestionArray zz_printMatrix:tmp];
+        
+    }
+    return 0;
+}
+
+void testMergeNode(){
     ListNode *rootNode = [[ListNode alloc]init];
     rootNode.data = 1;
     ListNode *nextNode = rootNode;
@@ -39,9 +49,6 @@ int main(int argc, const char * argv[]) {
         
      ListNode *head   =   [QuestionListNode zz_MergeTwoList:rootNode andList:rootNode1];
         
-        
-    }
-    return 0;
 }
 
 void testReverseList(){

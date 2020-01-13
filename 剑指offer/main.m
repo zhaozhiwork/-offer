@@ -13,16 +13,48 @@
 #import "QuestionTreeNode.h"
 #import "QuestionFibonacci.h"
 #import "QuestionDymiac.h"
-
+#import "QuestionStack.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
-        NSArray *tmp =@[@[@1,@2,@3,@4],@[@5,@6,@7,@8],@[@9,@10,@11,@12],@[@13,@14,@15,@16]];
 
-      NSArray *testResult = [QuestionArray zz_printMatrix:tmp];
         
     }
     return 0;
+}
+
+void testPrintFromToBottom(){
+      NSArray *preArray = @[@1,@2,@4,@7,@3,@5,@6,@8];
+      NSArray *inArray = @[@4,@7,@2,@1,@5,@3,@8,@6];
+      TreeNode *tmp = [QuestionTreeNode zz_reLayoutBinaryTree:preArray andWithInResult:inArray];
+    
+     NSArray *result =   [QuestionTreeNode zz_printFromTopToBottom:tmp];
+}
+
+void testIsPopOrder(){
+       BOOL result  =   [QuestionStack  zz_isPopOrder:@[@1,@2,@3,@4,@5] andWith:@[@4,@5,@3,@2,@1]];
+}
+
+void testStackMin(){
+     QuestionStack *testStack = [[QuestionStack alloc]init];
+     [testStack push:@(6)];
+      [testStack push:@(5)];
+      [testStack push:@(8)];
+      [testStack push:@(4)];
+      [testStack push:@(3)];
+      [testStack push:@(9)];
+     
+     [testStack pop];
+     
+     NSNumber *testNumber =  [testStack min];
+     
+       [testStack pop];
+       
+     NSNumber *testNumber2 =  [testStack min];
+}
+
+void testPrintMatrix(){
+      NSArray *tmp =@[@[@1,@2,@3,@4],@[@5,@6,@7,@8],@[@9,@10,@11,@12],@[@13,@14,@15,@16]];
+      NSArray *testResult = [QuestionArray zz_printMatrix:tmp];
 }
 
 void testMergeNode(){

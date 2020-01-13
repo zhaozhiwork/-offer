@@ -83,4 +83,31 @@
     [self zz_MirrorTree:tree.left];
     [self zz_MirrorTree:tree.right];
 }
+
++(NSArray *)zz_printFromTopToBottom:(TreeNode *)root{
+    NSMutableArray *orderArray = [NSMutableArray array];
+    if (!root) {
+        return orderArray;
+    }
+    TreeNode *headNode;
+    NSMutableArray *queue = [NSMutableArray array];
+    [queue addObject:root];
+   
+    while (queue.count>0) {
+        headNode = queue.firstObject;
+        [queue removeObjectAtIndex:0];
+        
+        if (headNode.left) {
+            [queue addObject:headNode.left];
+        }
+        
+        if (headNode.right) {
+            [queue addObject:headNode.right];
+        }
+        
+         [orderArray addObject:[NSNumber numberWithInteger:headNode.data]];
+    }
+    return orderArray;
+}
+
 @end

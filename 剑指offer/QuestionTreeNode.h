@@ -40,6 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
  *question18:镜像二叉树  操作给定的二叉树，将其变换为源二叉树的镜像；
  **/
 +(void )zz_MirrorTree:(TreeNode *)tree;
+
+/**
+ *问题22：从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+ *解题思路：层序遍历二叉树
+ **/
++(NSArray *)zz_printFromTopToBottom:(TreeNode *)root;
 @end
 
 NS_ASSUME_NONNULL_END

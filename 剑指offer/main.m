@@ -17,9 +17,16 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
+
         
     }
     return 0;
+}
+
+
+
+void testVerifySquenceBST(){
+       BOOL result  =   [QuestionTreeNode zz_VerifySquenceOfBST:@[@3,@4,@9,@5,@10,@12,@11]];
 }
 
 void testPrintFromToBottom(){
@@ -36,7 +43,7 @@ void testIsPopOrder(){
 
 void testStackMin(){
      QuestionStack *testStack = [[QuestionStack alloc]init];
-     [testStack push:@(6)];
+      [testStack push:@(6)];
       [testStack push:@(5)];
       [testStack push:@(8)];
       [testStack push:@(4)];

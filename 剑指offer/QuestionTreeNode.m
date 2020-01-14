@@ -110,4 +110,34 @@
     return orderArray;
 }
 
+
++(BOOL)zz_VerifySquenceOfBST:(NSArray <NSNumber *>*)sequence{
+    if (sequence.count==0) {
+        return NO;
+    }
+    
+    return [self zz_RecursiveVerifySquence:sequence with:0 andWithEnd:sequence.count-1];
+}
+
++(BOOL)zz_RecursiveVerifySquence:(NSArray<NSNumber *>*)sequence with:(NSInteger)start andWithEnd:(NSInteger)end{
+    if (start>=end) {return YES;}/**递归成功的退出条件**/
+    
+    NSInteger key = sequence[end].integerValue;  /**每次分割的根节点**/
+    NSInteger  i;/**记录拆分左右子树的下标***/
+    for ( i=start; i<end; i++) {
+        if (sequence[i].integerValue>key) {
+            break; /****分割左子树数据和右子树数据**/
+        }
+    }
+    
+    /**判断右子树的结点值有没有小于根结点的值，如果有则返回NO,如果均大于根结点则继续拆分左右子树**/
+    for (NSInteger j = i; j<end; j++) {
+        if (sequence[j].integerValue<key) {
+            return NO;
+        }
+    }
+    
+    return [self zz_RecursiveVerifySquence:sequence with:start andWithEnd:i-1]&&[self zz_RecursiveVerifySquence:sequence with:i andWithEnd:end-1];
+}
+
 @end

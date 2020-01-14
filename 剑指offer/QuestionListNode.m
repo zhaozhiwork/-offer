@@ -12,6 +12,10 @@
 
 @end
 
+@implementation RandomListNode
+
+@end
+
 @implementation QuestionListNode
 
 +(NSArray *)zz_printListFromTailToHead:(ListNode *)node{
@@ -99,4 +103,29 @@
     return mergeList.next;
 }
 
+
++(RandomListNode *)zz_RandomListNodeClone:(RandomListNode *)head{
+    
+    NSMutableDictionary <NSString *,RandomListNode *>*nodeDict = [NSMutableDictionary dictionary];
+    
+    RandomListNode *headNode = head;
+    
+    RandomListNode *copyNode = headNode;
+    while (headNode) {
+        
+        RandomListNode *node = [[RandomListNode alloc]init];
+        node.data  = headNode.data;
+        [nodeDict setObject:node forKey:[NSString stringWithFormat:@"%@",headNode]];
+        
+        headNode = headNode.next;
+    }
+    
+    while (copyNode) {
+        [nodeDict valueForKey:[NSString stringWithFormat:@"%@",copyNode]].next =   [nodeDict valueForKey:[NSString stringWithFormat:@"%@",copyNode.next]];
+        [nodeDict valueForKey:[NSString stringWithFormat:@"%@",copyNode]].random =   [nodeDict valueForKey:[NSString stringWithFormat:@"%@",copyNode.random]];
+        copyNode = copyNode.next;
+    }
+    
+    return [nodeDict valueForKey:[NSString stringWithFormat:@"%@",head]];
+}
 @end

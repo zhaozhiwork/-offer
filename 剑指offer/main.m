@@ -16,53 +16,73 @@
 #import "QuestionStack.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+   
+        RandomListNode *head = [[RandomListNode alloc]init];
+        head.data = 3;
         
-        TreeNode *root = [[TreeNode alloc]init];
-        root.data = 10;
+        RandomListNode *next1 = [[RandomListNode alloc]init];
+        next1.data = 5;
+        head.next = next1;
         
-        TreeNode *left1Node = [[TreeNode alloc]init];
-        left1Node.data = 5;
-        root.left = left1Node;
+        RandomListNode *random1 = [[RandomListNode alloc]init];
+        random1.data = 6;
+        head.random = random1;
         
         
-        TreeNode *right1Node = [[TreeNode alloc]init];
-        right1Node.data = 7;
-        root.right = right1Node;
+        RandomListNode *next2 = [[RandomListNode alloc]init];
+        next2.data = 7;
+        next1.next = next2;
+        next2.next = random1;
         
-        TreeNode *left2Node = [[TreeNode alloc]init];
-        left2Node.data = 8;
-        left1Node.left = left2Node;
-        
-        TreeNode *right2Node = [[TreeNode alloc]init];
-        right2Node.data = 6;
-        left1Node.right = right2Node;
-        
-        TreeNode *left3Node = [[TreeNode alloc]init];
-        left3Node.data = 4;
-        right1Node.left = left3Node;
-        
-        TreeNode *right4Node = [[TreeNode alloc]init];
-        right4Node.data = 3;
-        right1Node.right = right4Node;
-        
-        TreeNode *right5Node = [[TreeNode alloc]init];
-        right5Node.data = 1;
-        right4Node.right = right5Node;
-        
-        /***
-         *          10
-         *     5          7
-         *   8    6    4   3
-        *                        1
-         **/
-
-       NSMutableArray *result =   [QuestionTreeNode zz_FindPath:root andWithTarget:21];
+      RandomListNode *testHead =   [QuestionListNode zz_RandomListNodeClone:head];
         
     }
     return 0;
 }
 
 
+void testzz_FindPath(){
+    TreeNode *root = [[TreeNode alloc]init];
+     root.data = 10;
+     
+     TreeNode *left1Node = [[TreeNode alloc]init];
+     left1Node.data = 5;
+     root.left = left1Node;
+     
+     
+     TreeNode *right1Node = [[TreeNode alloc]init];
+     right1Node.data = 7;
+     root.right = right1Node;
+     
+     TreeNode *left2Node = [[TreeNode alloc]init];
+     left2Node.data = 8;
+     left1Node.left = left2Node;
+     
+     TreeNode *right2Node = [[TreeNode alloc]init];
+     right2Node.data = 6;
+     left1Node.right = right2Node;
+     
+     TreeNode *left3Node = [[TreeNode alloc]init];
+     left3Node.data = 4;
+     right1Node.left = left3Node;
+     
+     TreeNode *right4Node = [[TreeNode alloc]init];
+     right4Node.data = 3;
+     right1Node.right = right4Node;
+     
+     TreeNode *right5Node = [[TreeNode alloc]init];
+     right5Node.data = 1;
+     right4Node.right = right5Node;
+     
+     /***
+      *          10
+      *     5          7
+      *   8    6    4   3
+     *                        1
+      **/
+
+    NSMutableArray *result =   [QuestionTreeNode zz_FindPath:root andWithTarget:21];
+}
 
 void testVerifySquenceBST(){
        BOOL result  =   [QuestionTreeNode zz_VerifySquenceOfBST:@[@3,@4,@9,@5,@10,@12,@11]];

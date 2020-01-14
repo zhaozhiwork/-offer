@@ -19,7 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic ,strong)ListNode  *next;
 @end
 
-
+@interface RandomListNode:NSObject
+@property(nonatomic ,assign)NSInteger  data;
+@property(nonatomic ,strong)RandomListNode  *next;
+@property(nonatomic ,strong)RandomListNode  *random;
+@end
 
 @interface QuestionListNode : NSObject
 /**
@@ -48,6 +52,13 @@ NS_ASSUME_NONNULL_BEGIN
  *解题思路：其中的单调不减规则  即 f(x1)<=f(x2) 在作用域中满足（x1<x2）
  **/
 +(ListNode *)zz_MergeTwoList:(ListNode *)list1 andList:(ListNode *)list2;
+
+
+/**题目：25输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的head。（注意，输出结果中请不要返回参数中的节点引用，否则判题程序会直接返回空）
+ *
+ *
+ **/
++(RandomListNode *)zz_RandomListNodeClone:(RandomListNode *)head;
 @end
 
 NS_ASSUME_NONNULL_END

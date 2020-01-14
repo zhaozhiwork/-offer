@@ -184,4 +184,33 @@
     }
     [trace removeLastObject];/**找不到符合条件的路径，也要每次递归完进行一次回溯**/
 }
+
++(TreeNode *)zz_Convert:(TreeNode *)root{
+    TreeNode *head = nil;
+    TreeNode *recordPreHead = nil;
+    
+    [self zz_RecursiveMidOrder:root withHead:head andWithRecord:recordPreHead];
+    
+    return head;
+}
+
++(void)zz_RecursiveMidOrder:(TreeNode *)root withHead:(TreeNode *)head andWithRecord:(TreeNode *)record{
+    if (!root) {
+        return ;
+    }
+    
+    [self zz_RecursiveMidOrder:root.left withHead:head andWithRecord:record];
+    
+    if (!record) {
+        record = root;
+        head = root;
+    }else{
+        record.right = root;
+        root.left = record;
+        record = root;
+    }
+    
+    [self zz_RecursiveMidOrder:root.right withHead:head andWithRecord:record];
+    
+}
 @end

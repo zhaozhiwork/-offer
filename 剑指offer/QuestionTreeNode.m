@@ -140,4 +140,48 @@
     return [self zz_RecursiveVerifySquence:sequence with:start andWithEnd:i-1]&&[self zz_RecursiveVerifySquence:sequence with:i andWithEnd:end-1];
 }
 
+
++(NSMutableArray <NSMutableArray <NSNumber*>*>*)zz_FindPath:(TreeNode *)root andWithTarget:(NSInteger)target{
+    
+    NSMutableArray *result = [NSMutableArray array];
+    
+    if (!root) {
+        return nil;
+    }
+    
+    NSMutableArray *traceArray = [NSMutableArray array];
+    /**深度遍历左右子树***/
+    
+    [self zz_RecursiveTreeNode:root andTarget:target resultArray:result traceArray:traceArray];
+    
+    /**排序数组长度大的路径在前面**/
+   [ result sortUsingComparator:^NSComparisonResult(NSMutableArray *obj1, NSMutableArray *obj2) {
+       if (obj1.count>obj2.count) {
+           return NSOrderedAscending;
+       }
+       return NSOrderedDescending;
+   }];
+    
+    return result;
+}
+
++(void)zz_RecursiveTreeNode:(TreeNode *)root andTarget:(NSInteger)target resultArray:(NSMutableArray *)result traceArray:(NSMutableArray *)trace{
+    
+    [trace addObject:[NSNumber numberWithInteger:root.data]];
+    
+    if (!root.left && !root.right && target == root.data) {
+        /*叶子结点***/
+        [result addObject:[trace copy]];
+        [trace removeLastObject];/**找到符合条件的路径要进行一次回溯**/
+        return;
+    }
+    
+    if (root.left) {
+        [self zz_RecursiveTreeNode:root.left andTarget:target-root.data resultArray:result traceArray:trace];
+    }
+    if (root.right) {
+        [ self zz_RecursiveTreeNode:root.right andTarget:target-root.data resultArray:result traceArray:trace];
+    }
+    [trace removeLastObject];/**找不到符合条件的路径，也要每次递归完进行一次回溯**/
+}
 @end

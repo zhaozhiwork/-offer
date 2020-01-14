@@ -16,8 +16,47 @@
 #import "QuestionStack.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        TreeNode *root = [[TreeNode alloc]init];
+        root.data = 10;
+        
+        TreeNode *left1Node = [[TreeNode alloc]init];
+        left1Node.data = 5;
+        root.left = left1Node;
+        
+        
+        TreeNode *right1Node = [[TreeNode alloc]init];
+        right1Node.data = 7;
+        root.right = right1Node;
+        
+        TreeNode *left2Node = [[TreeNode alloc]init];
+        left2Node.data = 8;
+        left1Node.left = left2Node;
+        
+        TreeNode *right2Node = [[TreeNode alloc]init];
+        right2Node.data = 6;
+        left1Node.right = right2Node;
+        
+        TreeNode *left3Node = [[TreeNode alloc]init];
+        left3Node.data = 4;
+        right1Node.left = left3Node;
+        
+        TreeNode *right4Node = [[TreeNode alloc]init];
+        right4Node.data = 3;
+        right1Node.right = right4Node;
+        
+        TreeNode *right5Node = [[TreeNode alloc]init];
+        right5Node.data = 1;
+        right4Node.right = right5Node;
+        
+        /***
+         *          10
+         *     5          7
+         *   8    6    4   3
+        *                        1
+         **/
 
-
+       NSMutableArray *result =   [QuestionTreeNode zz_FindPath:root andWithTarget:21];
         
     }
     return 0;

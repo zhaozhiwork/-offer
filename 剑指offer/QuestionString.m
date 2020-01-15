@@ -65,4 +65,33 @@ void replaceSpace(char *target,int length){
     return result;
 }
 
++(NSInteger)zz_FristNotRepeatingChar:(NSString *)str{
+    
+    NSMutableDictionary <NSString *,NSNumber *>*charDict  = [NSMutableDictionary dictionary];
+    
+    for (NSInteger i =0; i<str.length; i++) {
+        char currentChar = [str characterAtIndex:i];
+        NSString *key = [NSString stringWithFormat:@"%c",currentChar];
+        if (![charDict valueForKey:key]) {
+            [charDict setObject:@1 forKey:key];
+        }else{
+            NSNumber *oldCount = [charDict valueForKey:key];
+            NSInteger newCount = oldCount.integerValue +1;
+            [charDict setObject:[NSNumber numberWithInteger:newCount] forKey:key];
+        }
+    }
+    
+    NSInteger showIndex = -1;
+    
+    for (NSInteger j=0; j<str.length; j++) {
+        char currentChar = [str characterAtIndex:j];
+        NSString *key = [NSString stringWithFormat:@"%c",currentChar];
+        NSNumber *number =[charDict valueForKey:key];
+        if (number.integerValue == 1) {
+            return j;
+        }
+    }
+    
+    return showIndex;
+}
 @end

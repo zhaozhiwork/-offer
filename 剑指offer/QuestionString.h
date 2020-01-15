@@ -30,6 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
  * 解题思路：他们当做字符串处理 两两拼接然后比较大小，小的放在前面大的放后面
  ***/
 +(NSString *)zz_PrintMinNumber:(NSArray<NSNumber *>*)numbers;
+
+/**
+ *题目34：在一个字符串(0<=字符串长度<=10000，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1（需要区分大小写）.
+ *
+ *解题思路：我们使用一个字典：该字符作为Key，出现的次数作为value然后遍历字典
+ **/
++(NSInteger)zz_FristNotRepeatingChar:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END

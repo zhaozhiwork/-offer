@@ -21,11 +21,17 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-   NSInteger result=      [QuestionDymiac zz_GetUglyNumber:3];
-  
+
+      NSInteger reslut =  [QuestionString zz_FristNotRepeatingChar:@"google"];
         
     }
     return 0;
+}
+
+void testGetUglyNumber(){
+     NSInteger result=      [QuestionDymiac zz_GetUglyNumber:3];
+    
+    NSLog(@"@ld",result);
 }
 
 void testPrintMinNumber(){

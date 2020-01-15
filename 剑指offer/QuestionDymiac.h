@@ -63,6 +63,21 @@ NS_ASSUME_NONNULL_BEGIN
  **解题思路：将数组遍历用一个中间值保存当前相加的结果最大值，如果向量继续相加大于中间值，则更新中间值
  **/
 +(NSInteger)zz_FindGreatestSumOfSubArray:(NSArray<NSNumber *>*)array;
+
+/**
+ *题目31：求出1~13的整数中1出现的次数,并算出100~1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。ACMer希望你们帮帮他,并把问题更加普遍化,可以很快的求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）
+ *
+ *
+ **/
++(NSInteger)zz_NumberOfBetween1AndN_Solution:(NSInteger)N;
+
+/*
+ *题目33：把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含质因子7。 习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数
+ *
+ *解题思路：一个抽数必然是乘上2   || 或者乘上3    ||或者乘上5得出的
+ *但是难点在于他们之间的大小不好确定  所以我们用三个数组分别依次相乘2，3，5然后比较大小
+ ***/
++(NSInteger)zz_GetUglyNumber:(NSInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END

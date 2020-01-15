@@ -7,7 +7,7 @@
 //
 
 
-#warning 题目27字符串的排列暂时不会
+#warning 题目27字符串的排列暂时不会  \\ 题目31数字中出现的1赞暂时不会
 
 #import <Foundation/Foundation.h>
 #import "QuestionArray.h"
@@ -21,11 +21,21 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-      NSInteger result =   [QuestionDymiac zz_FindGreatestSumOfSubArray:@[@6,@-3,@-2,@7,@-15,@1,@2,@2]];
-
+   NSInteger result=      [QuestionDymiac zz_GetUglyNumber:3];
+  
         
     }
     return 0;
+}
+
+void testPrintMinNumber(){
+      NSString *result  =    [QuestionString zz_PrintMinNumber:@[@3,@32,@321]];
+      NSLog(@"%@",result);
+}
+
+void testFindGreatestSumOfSubArray(){
+      NSInteger result =   [QuestionDymiac zz_FindGreatestSumOfSubArray:@[@6,@-3,@-2,@7,@-15,@1,@2,@2]];
+      NSLog(@"%ld",result);
 }
 
 void testGetLeastNumber(){

@@ -35,4 +35,34 @@ void replaceSpace(char *target,int length){
     return [targetString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
+
++(NSString *)zz_PrintMinNumber:(NSArray<NSNumber *>*)numbers{
+    
+    NSMutableArray *mutableNumbers = [NSMutableArray arrayWithArray:numbers];
+    
+    for (NSInteger i = 0;i<mutableNumbers.count ; i++) {
+        
+        for (NSInteger j = i+1; j<mutableNumbers.count; j++) {
+            
+            NSString *front = [NSString stringWithFormat:@"%@",mutableNumbers[i]];
+            NSString *after = [NSString stringWithFormat:@"%@",mutableNumbers[j]];
+            NSString *frontAppend = [NSString stringWithFormat:@"%@%@",front,after];
+            NSString *afterAppend = [NSString stringWithFormat:@"%@%@",after,front];
+            
+            if (afterAppend.integerValue<frontAppend.integerValue) {
+                NSNumber *tmpNumber = mutableNumbers[i];
+                [mutableNumbers replaceObjectAtIndex:i withObject:mutableNumbers[j]];
+                [mutableNumbers replaceObjectAtIndex:j withObject:tmpNumber];
+            }
+        }
+    }
+    
+    NSString *result = @"";
+    for (NSInteger k=0; k<mutableNumbers.count; k++) {
+        result=  [result stringByAppendingFormat:@"%@", [NSString stringWithFormat:@"%@",mutableNumbers[k]]];
+    }
+    
+    return result;
+}
+
 @end

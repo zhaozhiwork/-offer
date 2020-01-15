@@ -106,4 +106,46 @@
     
     return maxResult;
 }
+
++(NSInteger)zz_NumberOfBetween1AndN_Solution:(NSInteger)N{
+    
+    
+    return 0;
+}
+
+
++(NSInteger)zz_GetUglyNumber:(NSInteger)index{
+    
+    if (index<=0) {
+        return 0;
+    }
+    
+    NSInteger p2 = 0;NSInteger p3= 0;NSInteger p5 = 0;
+    
+    NSMutableArray<NSNumber *> *resultArray = [NSMutableArray array];
+    
+    /*第一个抽数为1***/
+    [resultArray addObject:[NSNumber numberWithInteger:1]];
+    
+    for (NSInteger i =1; i<index; i++) {
+        
+       NSInteger minResult=  MIN(resultArray[p2].integerValue*2, (MIN(resultArray[p3].integerValue*3, resultArray[p5].integerValue*5)));
+        
+        [resultArray addObject:[NSNumber numberWithInteger:minResult]];
+        
+        if (resultArray[i].integerValue ==  resultArray[p2].integerValue*2 ) {
+            p2++;
+        }
+        
+        if (resultArray[i].integerValue ==  resultArray[p3].integerValue*3) {
+            p3++;
+        }
+        
+        if (resultArray[i].integerValue ==  resultArray[p5].integerValue*5) {
+            p5++;
+        }
+    }
+    
+    return resultArray[index-1].integerValue;
+}
 @end

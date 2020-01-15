@@ -6,6 +6,9 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
+
+#warning 题目27字符串的排列暂时不会
+
 #import <Foundation/Foundation.h>
 #import "QuestionArray.h"
 #import "QuestionString.h"
@@ -14,32 +17,44 @@
 #import "QuestionFibonacci.h"
 #import "QuestionDymiac.h"
 #import "QuestionStack.h"
+#import "QuestionSort.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-        RandomListNode *head = [[RandomListNode alloc]init];
-        head.data = 3;
-        
-        RandomListNode *next1 = [[RandomListNode alloc]init];
-        next1.data = 5;
-        head.next = next1;
-        
-        RandomListNode *random1 = [[RandomListNode alloc]init];
-        random1.data = 6;
-        head.random = random1;
-        
-        
-        RandomListNode *next2 = [[RandomListNode alloc]init];
-        next2.data = 7;
-        next1.next = next2;
-        next2.next = random1;
-        
-      RandomListNode *testHead =   [QuestionListNode zz_RandomListNodeClone:head];
+        NSMutableArray *array = [NSMutableArray arrayWithArray:@[@4,@5,@1,@6,@2,@7,@3,@8]];
+        NSArray *result   =  [QuestionSort zz_GetLeastNumbers_Solution:array andWithLeastK:4];
         
     }
     return 0;
 }
 
+void testMoreThanHalf(){
+    NSInteger integer  =   [QuestionArray zz_MoreThanHalfNum_Solution:@[@1,@2,@3,@2,@2,@2,@5,@4,@2]];
+    NSLog(@"%ld",integer);
+}
+
+void testListNodeCopy(){
+        RandomListNode *head = [[RandomListNode alloc]init];
+         head.data = 3;
+         
+         RandomListNode *next1 = [[RandomListNode alloc]init];
+         next1.data = 5;
+         head.next = next1;
+         
+         RandomListNode *random1 = [[RandomListNode alloc]init];
+         random1.data = 6;
+         head.random = random1;
+         
+         
+         RandomListNode *next2 = [[RandomListNode alloc]init];
+         next2.data = 7;
+         next1.next = next2;
+         next2.next = random1;
+         
+       RandomListNode *testHead =   [QuestionListNode zz_RandomListNodeClone:head];
+         
+         NSLog(@"%@",testHead);
+}
 
 void testzz_FindPath(){
     TreeNode *root = [[TreeNode alloc]init];
@@ -82,10 +97,12 @@ void testzz_FindPath(){
       **/
 
     NSMutableArray *result =   [QuestionTreeNode zz_FindPath:root andWithTarget:21];
+       NSLog(@"%@",result);
 }
 
 void testVerifySquenceBST(){
        BOOL result  =   [QuestionTreeNode zz_VerifySquenceOfBST:@[@3,@4,@9,@5,@10,@12,@11]];
+      NSLog(@"%d",result);
 }
 
 void testPrintFromToBottom(){
@@ -94,10 +111,13 @@ void testPrintFromToBottom(){
       TreeNode *tmp = [QuestionTreeNode zz_reLayoutBinaryTree:preArray andWithInResult:inArray];
     
      NSArray *result =   [QuestionTreeNode zz_printFromTopToBottom:tmp];
+    
+     NSLog(@"%@",result);
 }
 
 void testIsPopOrder(){
        BOOL result  =   [QuestionStack  zz_isPopOrder:@[@1,@2,@3,@4,@5] andWith:@[@4,@5,@3,@2,@1]];
+    NSLog(@"%d",result);
 }
 
 void testStackMin(){
@@ -112,15 +132,22 @@ void testStackMin(){
      [testStack pop];
      
      NSNumber *testNumber =  [testStack min];
+    
+    NSLog(@"%@",testNumber);
      
        [testStack pop];
        
      NSNumber *testNumber2 =  [testStack min];
+    
+    NSLog(@"%@",testNumber2);
 }
+
 
 void testPrintMatrix(){
       NSArray *tmp =@[@[@1,@2,@3,@4],@[@5,@6,@7,@8],@[@9,@10,@11,@12],@[@13,@14,@15,@16]];
       NSArray *testResult = [QuestionArray zz_printMatrix:tmp];
+    
+    NSLog(@"%@",testResult);
 }
 
 void testMergeNode(){
@@ -147,6 +174,7 @@ void testMergeNode(){
         
      ListNode *head   =   [QuestionListNode zz_MergeTwoList:rootNode andList:rootNode1];
         
+    NSLog(@"%@",head);
 }
 
 void testReverseList(){
@@ -160,6 +188,7 @@ void testReverseList(){
             nextNode = tmpNode;
         }
      ListNode *head =  [QuestionListNode zz_reverseList:rootNode];
+       NSLog(@"%@",head);
 }
 
 void testKthToTail(){
@@ -174,6 +203,7 @@ void testKthToTail(){
        }
        
     ListNode *resultNode =  [QuestionListNode zz_FindKthToTail:rootNode andIndex:9];
+       NSLog(@"%@",resultNode);
 }
 
 void testReOrderArray(){
@@ -184,30 +214,37 @@ void testReOrderArray(){
 
 void testPower(){
      double result = [QuestionDymiac zz_Power:10.0 andWith:-2];
+    NSLog(@"%f",result);
 }
 
 void testNumberOF1(){
     NSInteger result = [QuestionDymiac zz_NumberOF1Complete:10];
+     NSLog(@"%ld",result);
 }
 
 void testJumoFloor(){
    /**变态跳台阶问题**/
     NSInteger result = [QuestionDymiac zz_jumpFloor:3];
+     NSLog(@"%ld",result);
 }
 
 void testFibonacci(){
        NSInteger result =  [QuestionFibonacci zz_FibonacciWithInputNumber:10];
     
        NSInteger result2 =  [QuestionFibonacci zz_FibonacciWithInputNumberNoRecursion:10];
+    
+    NSLog(@"%ld,%ld",result,result2);
 }
 
 void testQuestion4(){
     NSArray *preArray = @[@1,@2,@4,@7,@3,@5,@6,@8];
     NSArray *inArray = @[@4,@7,@2,@1,@5,@3,@8,@6];
     TreeNode *tmp = [QuestionTreeNode zz_reLayoutBinaryTree:preArray andWithInResult:inArray];
+    NSLog(@"%@",tmp);
 }
 
 void testMinNumberInArray(){
     NSArray *array = @[@3,@4,@5,@1,@2];
     NSInteger result  =  [QuestionArray zz_FindMinNumberInRotateArray:array];
+    NSLog(@"%ld",result);
 }

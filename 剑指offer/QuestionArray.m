@@ -121,4 +121,25 @@ bool  FindTarget(int array[][4],int length,int target){
     return printArray;
 }
 
++(NSInteger)zz_MoreThanHalfNum_Solution:(NSArray *)array{
+    NSMutableDictionary <NSString *, NSNumber *>*dict = [NSMutableDictionary dictionary];
+    
+    for (NSInteger i = 0; i<array.count; i++) {
+        
+        NSNumber *number = [dict valueForKey:[NSString stringWithFormat:@"%ld",[array[i] integerValue]]];
+        
+        if (number) {
+            number = [NSNumber numberWithInteger:number.integerValue+1];
+            [dict setObject:number forKey:[NSString stringWithFormat:@"%ld",[array[i] integerValue]]];
+            if (number.integerValue>array.count/2) {
+                return [array[i] integerValue];
+            }
+        }else{
+            [dict setObject:[NSNumber numberWithInteger:1] forKey:[NSString stringWithFormat:@"%ld",[array[i] integerValue]]];
+        }
+    }
+    
+    return 0;
+}
+
 @end

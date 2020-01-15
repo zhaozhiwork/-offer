@@ -90,4 +90,20 @@
         }
     }
 }
+
+
++(NSInteger)zz_FindGreatestSumOfSubArray:(NSArray<NSNumber *>*)array{
+    
+    NSInteger maxResult = array.firstObject.integerValue;
+    
+    NSInteger totalResult = 0;
+    for (NSInteger  i= 0; i<array.count; i++) {
+        totalResult += array[i].integerValue;
+        if (maxResult<totalResult) {
+            maxResult = totalResult;
+        }
+    }
+    
+    return maxResult;
+}
 @end

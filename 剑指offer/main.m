@@ -21,11 +21,17 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-        NSMutableArray *array = [NSMutableArray arrayWithArray:@[@4,@5,@1,@6,@2,@7,@3,@8]];
-        NSArray *result   =  [QuestionSort zz_GetLeastNumbers_Solution:array andWithLeastK:4];
+      NSInteger result =   [QuestionDymiac zz_FindGreatestSumOfSubArray:@[@6,@-3,@-2,@7,@-15,@1,@2,@2]];
+
         
     }
     return 0;
+}
+
+void testGetLeastNumber(){
+    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@4,@5,@1,@6,@2,@7,@3,@8]];
+    NSArray *result   =  [QuestionSort zz_GetLeastNumbers_Solution:array andWithLeastK:4];
+    NSLog(@"%@",result);
 }
 
 void testMoreThanHalf(){

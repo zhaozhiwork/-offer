@@ -192,4 +192,54 @@
     }
     return count;
 }
+
+
++(NSArray *)zz_FIndContinousSequence:(NSInteger)sum{
+    
+    NSMutableArray <NSArray *>*resultArray = [NSMutableArray array];
+    NSInteger left = 1;
+    NSInteger right = 2;
+    NSInteger count = 0;
+    
+    while (left<right) {
+        /**连续的数列他们之和为 (a0+an)**n/2*/
+        count = (left+right)*(right-left+1)/2;
+        
+        if (count<sum) {
+            right++;
+        }else if(count>sum){
+            left++;
+        }else{
+            NSMutableArray *orderArray = [NSMutableArray array];
+            for (NSInteger i = left; i<=right; i++) {
+                [orderArray addObject:[NSNumber numberWithInteger:i]];
+            }
+            [resultArray addObject:orderArray];
+            left++;
+        }
+        
+    }
+    return resultArray;
+}
+
++(NSArray *)zz_FindNumbersWithSum:(NSInteger)sum andArray:(NSArray *)array{
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    NSInteger low = 0;
+    NSInteger high = array.count-1;
+    
+    while (low<high) {
+        NSInteger tmpSum = [array[low] integerValue] + [array[high] integerValue];
+        if (tmpSum<sum) {
+            low ++;
+        }else if (tmpSum>sum){
+            high--;
+        }else{
+            [resultArray addObject:array[low]];
+            [resultArray addObject:array[high]];
+            break;
+        }
+    }
+    return resultArray;
+}
 @end

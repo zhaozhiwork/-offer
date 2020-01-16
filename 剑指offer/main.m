@@ -21,13 +21,15 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-        
-    NSInteger result  =  [QuestionDymiac zz_GetNumberOfK:@[@1,@2,@3,@3,@5,@6,@6,@6,@7,@8,@10,@12] andWithTarget:6];
-
-        
+    NSArray *result =    [QuestionDymiac zz_FIndContinousSequence:100];
 
     }
     return 0;
+}
+
+void testGetNumberOfK(){
+    NSInteger result  =  [QuestionDymiac zz_GetNumberOfK:@[@1,@2,@3,@3,@5,@6,@6,@6,@7,@8,@10,@12] andWithTarget:6];
+    NSLog(@"%ld",result);
 }
 
 void testFirstCommonNode(){

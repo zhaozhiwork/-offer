@@ -128,4 +128,28 @@
     
     return [nodeDict valueForKey:[NSString stringWithFormat:@"%@",head]];
 }
+
+
++(ListNode *)zz_FindFirstCommonNode:(ListNode *)pHead1 andListNode:(ListNode *)pHead2{
+    
+    if (!pHead1 || !pHead2) {
+        return nil;
+    }
+    ListNode *firstHead = pHead1;
+    ListNode *lastHead = pHead2;
+    
+
+    while (firstHead != lastHead) {
+        firstHead = firstHead.next;
+        lastHead = lastHead.next;
+        
+        if (firstHead != lastHead) {
+            if (!firstHead) {firstHead = pHead2;}
+            if (!lastHead) {lastHead = pHead1;}
+        }
+    }
+    
+    return firstHead;
+}
+
 @end

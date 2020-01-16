@@ -21,17 +21,71 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
    
-
-      NSInteger reslut =  [QuestionString zz_FristNotRepeatingChar:@"google"];
         
+
+        
+
     }
     return 0;
 }
 
+void testFirstCommonNode(){
+       ListNode *root1 = [[ListNode alloc]init];
+       root1.data = 0;
+       
+       ListNode *node1 = [[ListNode alloc]init];
+       node1.data = 1;
+       
+       ListNode *node2 = [[ListNode alloc] init];
+       node2.data = 2;
+       
+       ListNode *node3 = [[ListNode alloc]init];
+       node3.data  = 3;
+       
+       ListNode *node4 = [[ListNode alloc]init];
+        node4.data  = 4;
+
+       ListNode *node5 = [[ListNode alloc]init];
+        node5.data  = 5;
+       
+       root1.next = node1;
+       node1.next = node2;
+       node2.next = node3;
+       node3.next = node4;
+       node4.next = node5;
+       
+       ListNode *root2 = [[ListNode alloc]init];
+     
+       ListNode *nodea = [[ListNode alloc]init];
+        nodea.data  = 10;
+       
+       ListNode *nodeb = [[ListNode alloc]init];
+       nodea.data  = 11;
+       
+       root2.next = nodea;
+       nodea.next = nodeb;
+       nodeb.next = node4;
+     
+    ListNode *result =   [QuestionListNode zz_FindFirstCommonNode:root1 andListNode:root2];
+       
+       NSLog(@"%@",result);
+}
+
+
+void testInversePairs(){
+      NSInteger result =   [QuestionSort zz_InversePairs:@[@1,@2,@3,@4,@5,@6,@7,@0]];
+      NSLog(@"%ld",result);
+}
+
+void testFristNotRepeatingChar(){
+      NSInteger reslut =  [QuestionString zz_FristNotRepeatingChar:@"google"];
+      NSLog(@"%ld",reslut);
+}
+
 void testGetUglyNumber(){
-     NSInteger result=      [QuestionDymiac zz_GetUglyNumber:3];
+     NSInteger result=   [QuestionDymiac zz_GetUglyNumber:3];
     
-    NSLog(@"@ld",result);
+    NSLog(@"%ld",result);
 }
 
 void testPrintMinNumber(){

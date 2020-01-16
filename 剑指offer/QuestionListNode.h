@@ -59,6 +59,20 @@ NS_ASSUME_NONNULL_BEGIN
  *
  **/
 +(RandomListNode *)zz_RandomListNodeClone:(RandomListNode *)head;
+
+/**
+ *题目36：输入两个链表，找出它们的第一个公共结点。
+ *
+ *解题思路：1.最先想到的是使用字典（hashMap）来存储，但是看了一下题解区的大神思路改用了双指针法
+ *
+ *
+ *链表1      ： node0-->node1--->node2-->node3-->node4-->node5-->nil 此时改变next指向-->nodea-->nodeb-->node4-->node5
+ *链表2      ： nodea-->nodeb-->node4-->node5-->nil此时改变next指向node0-->node1--->node2-->node3-->node4-->node5-->nil
+ *
+ *一旦两个指针相等 则返回
+ *
+ **/
++(ListNode *)zz_FindFirstCommonNode:(ListNode *)pHead1 andListNode:(ListNode *)pHead2;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -142,4 +142,19 @@ bool  FindTarget(int array[][4],int length,int target){
     return 0;
 }
 
+
++(void)zz_FindNumberAppearOnce:(NSArray<NSNumber *>*)array andOutNum1:(NSMutableArray *)num1 andOutNum2:(NSMutableArray *)num2{
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    for (NSInteger i = 0; i<array.count; i++) {
+        
+        NSString *currentKey = [NSString stringWithFormat:@"%ld",array[i].integerValue];
+        
+        if ([dict valueForKey:currentKey]) {
+            [dict removeObjectForKey:currentKey];
+        }else{
+            [dict setObject:@1 forKey:currentKey];
+        }
+    }
+}
 @end

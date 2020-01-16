@@ -148,4 +148,48 @@
     
     return resultArray[index-1].integerValue;
 }
+
+
++(NSInteger)zz_GetNumberOfK:(NSArray<NSNumber *> *)orderArray andWithTarget:(NSInteger)K{
+    
+    if (!(orderArray.count>0)) {
+        return 0;
+    }
+    
+    NSInteger count = 0;
+    
+    NSInteger low = 0;
+    NSInteger high = orderArray.count-1;
+    NSInteger mid = 0;
+    NSInteger tmpMid=0;
+    while (low<=high) {
+        mid =(low+high)/2;
+        if (orderArray[mid].integerValue<K) {
+            low = mid+1;
+        }else if (orderArray[mid].integerValue>K){
+            high  = mid-1;
+        }else{
+            count++;
+            tmpMid = mid;
+            break;
+        }
+    }
+    
+    while (mid>0) {
+        mid --;
+        if (orderArray[mid].integerValue<K) {
+            break;
+        }
+        count++;
+    }
+    
+    while (tmpMid<orderArray.count) {
+        tmpMid ++;
+        if (orderArray[tmpMid].integerValue>K) {
+            break;
+        }
+        count++;
+    }
+    return count;
+}
 @end

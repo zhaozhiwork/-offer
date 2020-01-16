@@ -84,6 +84,21 @@ NS_ASSUME_NONNULL_BEGIN
  *
  **/
 +(TreeNode *)zz_Convert:(TreeNode *)root;
+
+
+/**
+ *题目38：输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
+ *
+ *解题思路：二叉树的深度遍历，求最大值
+ ***/
++(NSInteger)zz_TreeDepth:(TreeNode *)root;
+
+/**
+ *题目39：输入一棵二叉树，判断该二叉树是否是平衡二叉树
+ *
+ *解题思路：平衡二叉树左右子树的高度至多相差1 ，我们深度遍历树的同时，只需要判断左右子树的高度差即可
+ **/
++(BOOL)zz_IsBalanced_Solution:(TreeNode *)root;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -52,6 +52,14 @@ NS_ASSUME_NONNULL_BEGIN
  思路2：我们将数组排序，直接取数组中间的值，然后看这个值在数组中的出现次数大不大于数组的一半，如果大于则返回该值，反之，返回0
  **/
 +(NSInteger)zz_MoreThanHalfNum_Solution:(NSArray *)array;
+
+/**
+ *题目40：一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。
+ *
+ *解题思路：遍历数组 使用字典存放 元素值作为key 出现的次数作为value 如果在遍历过程中，key存在则移除，遍历完成字典剩余的两个key就是我们想要的两个出现一次的数字
+ *
+ **/
++(void)zz_FindNumberAppearOnce:(NSArray<NSNumber *>*)array andOutNum1:(NSMutableArray *)num1 andOutNum2:(NSMutableArray *)num2;
 @end
 
 NS_ASSUME_NONNULL_END

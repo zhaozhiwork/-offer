@@ -78,6 +78,13 @@ NS_ASSUME_NONNULL_BEGIN
  *但是难点在于他们之间的大小不好确定  所以我们用三个数组分别依次相乘2，3，5然后比较大小
  ***/
 +(NSInteger)zz_GetUglyNumber:(NSInteger)index;
+
+/**
+ *题目37：统计一个数字在排序数组中出现的次数
+ *
+ *解题思路：排序数组证明数组是有序的，我们可以使用二分查找 ，找到目标值下标，然后往小于目标下标范围搜索，一遍往高于目标下标范围搜索
+ **/
++(NSInteger)zz_GetNumberOfK:(NSArray<NSNumber *> *)orderArray andWithTarget:(NSInteger)K;
 @end
 
 NS_ASSUME_NONNULL_END

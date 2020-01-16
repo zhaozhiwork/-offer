@@ -185,6 +185,7 @@
     [trace removeLastObject];/**找不到符合条件的路径，也要每次递归完进行一次回溯**/
 }
 
+
 +(TreeNode *)zz_Convert:(TreeNode *)root{
     TreeNode *head = nil;
     TreeNode *recordPreHead = nil;
@@ -212,5 +213,51 @@
     
     [self zz_RecursiveMidOrder:root.right withHead:head andWithRecord:record];
         
+}
+
+
++(NSInteger)zz_TreeDepth:(TreeNode *)root{
+    
+    if (!root) {
+        return 0;
+    }
+    
+    NSInteger left = [self zz_TreeDepth:root.left];
+    
+    NSInteger right = [self zz_TreeDepth:root.right];
+    
+    NSInteger result= (left>right?left:right)+1;
+    
+    return result;
+}
+
+
++(BOOL)zz_IsBalanced_Solution:(TreeNode *)root{
+    
+    return ([self zz_Balanced_TreeDepth:root]==-1);
+}
+
++(NSInteger)zz_Balanced_TreeDepth:(TreeNode *)root{
+    if (!root) {
+        return 0;
+    }
+    
+    NSInteger left = [self zz_TreeDepth:root.left];
+    
+    if (left==-1) {
+        return -1;
+    }
+    
+    NSInteger right = [self zz_TreeDepth:root.right];
+    
+    if (right==-1) {
+        return -1;
+    }
+    
+    if (left-right>1 || right-left>1) {
+        return -1;
+    }
+    
+    return (left>right?left:right)+1;
 }
 @end
